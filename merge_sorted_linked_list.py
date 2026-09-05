@@ -29,6 +29,21 @@ def mergeTwoLists(
     return res.next
 
 
+def mergeTwoListsRec(
+    list1: Optional[ListNode], list2: Optional[ListNode]
+) -> Optional[ListNode]:
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+    if list1.val <= list2.val:
+        list1.next = mergeTwoListsRec(list1.next, list2)
+        return list1
+    else:
+        list2.next = mergeTwoListsRec(list1, list2.next)
+        return list2
+
+
 list1 = ListNode()
 tail = list1
 for _ in (1, 2, 4):
@@ -46,7 +61,7 @@ for _ in (1, 3, 4):
 
 tail = None
 
-tail = mergeTwoLists(list1.next, list2.next)
+tail = mergeTwoListsRec(list1.next, list2.next)
 
 while tail:
     print(tail.val, end=" -> ")
