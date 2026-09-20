@@ -7,7 +7,7 @@ print(unzip)
 a, b, c = zip(*x)
 print(a, b, c)
 
-# matriz transpositon with zip
+# matrix transpositon with zip
 
 # n x n matrix
 print()
