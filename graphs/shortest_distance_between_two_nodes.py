@@ -13,6 +13,7 @@ for u, v in edges:
 def bfs(node, target):
     visited = [False] * nodes
     queue = deque([(node, 0)])
+    print(queue)
     visited[node] = True
 
     while queue:
@@ -27,4 +28,4 @@ def bfs(node, target):
                 queue.append((next, distance + 1))
 
 
-print(bfs(0, 3))
+print(bfs(3, 4))
