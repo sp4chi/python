@@ -45,7 +45,7 @@ def SSSP(graph, source) -> list:
     while min_heap:
         dist, node = heapq.heappop(min_heap)  # O(logn)
 
-        # distance[node] = best distance of node so far
+        # distance[node] : best distance of node so far
         if dist > distance[node]:
             continue
 

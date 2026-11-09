@@ -13,16 +13,15 @@ for u, v in edges:
 
 def bfs(node):
     queue = deque()
-    visited[node] = True
     queue.append(node)
 
     while queue:
         node = queue.popleft()
+        visited[node] = True
         print(node)
 
         for neighbour in ad_list[node]:
             if not visited[neighbour]:
-                visited[neighbour] = True
                 queue.append(neighbour)
 
 
