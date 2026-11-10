@@ -23,10 +23,10 @@ class Solution:
             for rot in range(len(queue)):
                 r, c = queue.popleft()
 
-                for r, c in [(r - 1, c), (r, c - 1), (r + 1, c), (r, c + 1)]:
-                    if 0 <= r < m and 0 <= c < n and grid[r][c] == 1:
+                for nr, nc in [(r - 1, c), (r, c - 1), (r + 1, c), (r, c + 1)]:
+                    if 0 <= nr < m and 0 <= nc < n and grid[nr][nc] == 1:
                         fresh -= 1
-                        grid[r][c] = ROTTEN
-                        queue.append((r, c))
+                        grid[nr][nc] = ROTTEN
+                        queue.append((nr, nc))
 
         return min_time if fresh == 0 else -1
