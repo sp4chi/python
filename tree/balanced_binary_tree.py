@@ -1,3 +1,12 @@
+"""
+Problem: Balanced Binary Tree — Determine if a binary tree is height-balanced (a binary tree in which the depth of the two subtrees of every node never differs by more than one). Key constraints: Node count is in [0, 5000] and -10^4 <= Node.val <= 10^4.
+Source: LeetCode #110 (https://leetcode.com/problems/balanced-binary-tree/)
+Solution Pattern: Post-order Traversal (DFS / Bottom-Up Height Checking)
+Complexity (My Solution):
+    - Time: O(N) — Each node is visited once during post-order depth calculations.
+    - Space: O(H) — Recursion stack depth corresponds to tree height H; O(log N) average, O(N) worst case for skewed trees.
+"""
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -54,6 +63,7 @@ class Solution:
         if right == -1:
             return -1
 
+        # Subtree height difference > 1 indicates imbalance; propagate failure (-1)
         if abs(left - right) > 1:
             return -1
 
