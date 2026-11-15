@@ -1,3 +1,12 @@
+"""
+Problem: Flatten Binary Tree to Linked List — Given the root of a binary tree, flatten the tree into a "linked list" in-place following pre-order traversal using right child pointers. Key constraints: Node count is in [0, 2000] and -100 <= Node.val <= 100.
+Source: LeetCode #114 (https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)
+Solution Pattern: Reverse Post-order Traversal (DFS / Right-Left-Root Traversal)
+Complexity (My Solution):
+    - Time: O(N) — Every node is visited during post-order in-place pointer updates.
+    - Space: O(H) — Call stack depth corresponds to tree height H; O(log N) for balanced trees, O(N) for degenerate trees.
+"""
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -22,6 +31,7 @@ class Solution:
             helper_post(root.right)
             helper_post(root.left)
 
+            # Reverse post-order (Right -> Left -> Root) links current node to previously processed node
             root.right = prev
             root.left = None
             prev = root
