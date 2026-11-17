@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository is a personal Python Data Structures & Algorithms (DSA) and LeetCode solution archive. Each `.py` file contains my own implementation of a problem. The primary goal of AI assistance in this repo is to document existing solutions clearly and provide non-destructive code reviews in a separate Markdown file without altering my working Python code.
+This repository is a personal Python Data Structures & Algorithms (DSA) and LeetCode solution archive. Each `.py` file contains my own implementation of a problem. The primary goal of AI assistance in this repo is to document existing solutions clearly and provide non-destructive code reviews in topic-specific Markdown files without altering my working Python code.
 
 ## Core Rules & Boundaries (Never / Always)
 
@@ -10,13 +10,13 @@ This repository is a personal Python Data Structures & Algorithms (DSA) and Leet
 
 - **NEVER modify, refactor, reformat, or delete existing Python solution code.** Every statement, variable name, import, indentation, type hint, and logic block in my `.py` files must remain identical outside of added docstrings/comments.
 - **NEVER guess or fabricate** LeetCode problem numbers, titles, constraints, time/space complexities, or algorithmic patterns. If uncertain about a problem's metadata, verify it against the problem description or official sources, or mark it as `Unknown / Needs Verification`.
-- **NEVER overwrite** prior entries in `REVIEW.md` unless explicitly asked.
+- **NEVER overwrite** prior entries in any `REVIEW.md` unless explicitly asked.
 
 ### Always
 
 - **ALWAYS preserve original Python logic** when adding explanatory comments or top-level docstrings.
 - **ALWAYS verify** edge cases and complexity claims against the actual Python code written in the file (e.g., accounting for list slicing copies, `in` lookups on lists vs. sets, or recursion stack depth).
-- **ALWAYS separate feedback from code** by placing Pythonic syntax tips, standard library helpers, and alternative optimal approaches in `REVIEW.md` rather than editing the `.py` source file.
+- **ALWAYS separate feedback from code** by placing Pythonic syntax tips, standard library helpers, and alternative optimal approaches in the respective topic's `REVIEW.md` (e.g., `<topic>/REVIEW.md` like `graphs/REVIEW.md`, `tree/REVIEW.md`, or root `./REVIEW.md` for standalone root-level solutions) rather than editing the `.py` source file.
 
 ## Workflow 1: Documenting Python Solution Files
 
@@ -33,9 +33,9 @@ Complexity (My Solution):
 """
 ```
 
-## Workflow 2: Feedback & Better Solutions (`REVIEW.md`)
+## Workflow 2: Feedback & Better Solutions (`REVIEW.md` per topic)
 
-Do not edit my `.py` files to apply style fixes or optimizations. Instead, append or update an entry in `REVIEW.md` at the repository root using this structure:
+Do not edit my `.py` files to apply style fixes or optimizations. Instead, append or update an entry in the respective topic directory's `REVIEW.md` (e.g., `graphs/REVIEW.md`, `tree/REVIEW.md`, or `./REVIEW.md` for files not inside a topic folder) using this structure:
 
 ```markdown
 ## [LeetCode #XXXX] Problem Title (`path/to/solution.py`)
